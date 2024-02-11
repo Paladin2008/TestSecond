@@ -45,3 +45,25 @@ fun main() {
         println("Может пробивать лед")
     }
 }
+
+open class Liner(
+    val name: String = "Лайнер",
+    val capacityPassengers: Int = 300,
+    val maxSpeed: Int = 90,
+    val capacityLifting: Int = 20,
+    val abilityCrushIce: Boolean = false,
+)
+
+class Freight(
+    name: String = "Грузовой",
+    capacityPassengers: Int = 30,
+    maxSpeed: Int = 60,
+    capacityLifting: Int = 40,
+) : Liner(name, capacityPassengers, maxSpeed, capacityLifting)
+
+class Icebreaker(
+    name: String = "Ледокол",
+    capacityPassengers: Int = 30,
+    maxSpeed: Int = 40,
+    capacityLifting: Int = 10,
+) : Liner(name, capacityPassengers, maxSpeed, capacityLifting, abilityCrushIce = true)
