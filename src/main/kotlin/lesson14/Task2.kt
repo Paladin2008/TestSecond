@@ -47,3 +47,39 @@ fun main() {
     }
     ship3.embarkation()
 }
+
+open class Liner1(
+    val name: String = "Лайнер",
+    val capacityPassengers: Int = 300,
+    val maxSpeed: Int = 90,
+    val capacityLifting: Int = 20,
+    val abilityCrushIce: Boolean = false,
+) {
+    open fun embarkation() {
+        println("Способ погрузки: Выдвигает горизонтальный трап со шкафута")
+    }
+}
+
+class Freight1(
+    name: String = "Грузовой",
+    capacityPassengers: Int = 30,
+    maxSpeed: Int = 60,
+    capacityLifting: Int = 40,
+) : Liner1(name, capacityPassengers, maxSpeed, capacityLifting) {
+
+    override fun embarkation() {
+        println("Способ погрузки: Активирует погрузочный кран")
+    }
+}
+
+class Icebreaker1(
+    name: String = "Ледокол",
+    capacityPassengers: Int = 30,
+    maxSpeed: Int = 40,
+    capacityLifting: Int = 10,
+) : Liner1(name, capacityPassengers, maxSpeed, capacityLifting, abilityCrushIce = true) {
+
+    override fun embarkation() {
+        println("Способ погрузки: Открывает ворота со стороны кормы")
+    }
+}
