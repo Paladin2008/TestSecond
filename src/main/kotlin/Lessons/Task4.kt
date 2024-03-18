@@ -16,14 +16,19 @@ fun main() {
     instruments1.searchComponents(components1)
 }
 
+abstract class Catalog() {
+    abstract val name: String
+    abstract val amount: Int
+}
+
 interface Search {
 
     fun searchComponents(componentsName: Components)
 }
 
-class Components(val name: String, val amount: Int)
+class Components(override val name: String, override val amount: Int) : Catalog()
 
-class Instruments(val name: String, val amount: Int) : Search {
+class Instruments(override val name: String, override val amount: Int) : Search, Catalog() {
     override fun searchComponents(componentsName: Components) {
         println("Выполняется поиск $name")
     }
