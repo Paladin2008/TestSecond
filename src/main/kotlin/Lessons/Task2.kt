@@ -16,15 +16,15 @@ fun main() {
 //    circle.radius
 }
 
-private const val pi = 3.14
+private const val PI = 3.14
 
 class Circle(private val radius: Int) {
 
     fun circumference() {
-        println("Длина ${2 * pi * radius}")
+        println("Длина ${2 * PI * radius}")
     }
 
     fun area() {
-        println("Площадь ${radius * radius * pi}")
+        println("Площадь ${radius * radius * PI}")
     }
 }
