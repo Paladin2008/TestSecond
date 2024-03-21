@@ -13,11 +13,9 @@ fun main() {
     println(user.validation(inputPass))
 }
 
-class User() {
+class User(val login: String = "login", private val password: String = "пароль") {
 
-    val login = "login"
-    private val pass = "пароль"
     fun validation(enteredPass: String): Boolean {
-        return enteredPass == pass
+        return enteredPass == password
     }
 }
